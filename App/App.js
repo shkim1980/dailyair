@@ -21,8 +21,17 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+
 export default class App extends Component<Props>{
+
+
     componentDidMount(){
+        // quick and dirty pesudo doing work while splash screen is displayed
+        function sleep(seconds){
+            var waitUntil = new Date().getTime() + seconds*999;
+            while(new Date().getTime() < waitUntil) true;
+        }
+        sleep(2) // sleep for 2 seconds
         SplashScreen.hide()
     }
 
