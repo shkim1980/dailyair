@@ -1,8 +1,13 @@
 package com.dailyair;
+import android.os.Bundle;
 
+
+// react-native-splash-screen >= 0.3.1
+import org.devio.rn.splashscreen.SplashScreen;
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
+    
 
     /**
      * Returns the name of the main component registered from JavaScript.
@@ -11,5 +16,11 @@ public class MainActivity extends ReactActivity {
     @Override
     protected String getMainComponentName() {
         return "dailyair";
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        SplashScreen.show(this);
+        super.onCreate(savedInstanceState);
     }
 }

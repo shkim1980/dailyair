@@ -3,17 +3,16 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
-import React, { Component } from "react";
-
-import SplashScreen from "./scenes/Splash";
+import React, {Component} from 'react';
 
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+} from 'react-native'
+
+import SplashScreen from 'react-native-splash-screen';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -22,20 +21,23 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-            DailyAir
-        </Text>
-        <Text style={styles.instructions}>
-            Daily air quality reports in your area
-        </Text>
-    </View>
-    );
-  }
+export default class App extends Component<Props>{
+//    componentDidMount(){
+//        SplashScreen.hide()
+//    }
+
+    render() {
+        return (
+          <View style={styles.container}>
+            <Text style={styles.welcome}>
+                DailyAir
+            </Text>
+            <Text style={styles.instructions}>
+                Daily air quality reports in your area
+            </Text>
+        </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -56,3 +58,4 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
