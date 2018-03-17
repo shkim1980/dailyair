@@ -28,8 +28,8 @@ $ yaourt -S watchman
 ###### API to use
 > https://docs.openaq.org/#api-_
 
-![Screenshot](https://raw.githubusercontent.com/jasonh9/dailyair/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/jasonh9/dailyair/master/screenshot.gif)
 
 #### Todo
-- [ ] create the splash screen 2 second transition
+- [x] create the splash screen 2 second transition : completed 031718
 - [ ] print API to console for debugging
