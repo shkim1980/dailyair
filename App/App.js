@@ -22,9 +22,9 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<Props>{
-//    componentDidMount(){
-//        SplashScreen.hide()
-//    }
+    componentDidMount(){
+        SplashScreen.hide()
+    }
 
     render() {
         return (
