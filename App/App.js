@@ -6,7 +6,7 @@
 
 import React, { Component } from "react";
 
-import SplashScreen from "./SplashScreen/Splash";
+import SplashScreen from "./scenes/Splash";
 
 import {
   Platform,

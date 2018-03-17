@@ -16,5 +16,5 @@ $ yaourt -S watchman
 ![Screenshot](https://raw.githubusercontent.com/jasonh9/dailyair/master/screenshot.png)
 
 #### Todo
-- [] create the splash screen 2 second transition
-- [] print API to console for debugging
+- [ ] create the splash screen 2 second transition
+- [ ] print API to console for debugging
