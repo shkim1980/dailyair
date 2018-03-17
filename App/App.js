@@ -31,7 +31,7 @@ export default class App extends Component<Props>{
             var waitUntil = new Date().getTime() + seconds*999;
             while(new Date().getTime() < waitUntil) true;
         }
-        sleep(2) // sleep for 2 seconds
+        sleep(3) // sleep for 2 seconds
         SplashScreen.hide()
     }
 
