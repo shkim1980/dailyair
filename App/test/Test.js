@@ -5,7 +5,7 @@ import {
 
 class Test extends Component {
     render(){
-        console.log("this is a logger");
+        console.log("this is a logger from the test class");
         return(
             <Text> hi </Text>
         );
