@@ -12,6 +12,8 @@ import {
     View,
 } from 'react-native'
 
+
+import Test from './test/Test';
 import SplashScreen from 'react-native-splash-screen';
 
 const instructions = Platform.select({
@@ -38,6 +40,7 @@ export default class App extends Component<Props>{
     render() {
         return (
           <View style={styles.container}>
+            <Test/>
             <Text style={styles.welcome}>
                 DailyAir
             </Text>
