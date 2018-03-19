@@ -31,6 +31,7 @@ $ yaourt -S watchman
 ![Screenshot](https://raw.githubusercontent.com/jasonh9/dailyair/master/screenshot.gif)
 
 ##### Notes to create 'un-safe gas' algo
+Helpful doc link -> https://www3.epa.gov/airnow/aqi-technical-assistance-document-may2016.pdf
 Link to air quality forecasting guidelines -> https://www3.epa.gov/airnow/aq_forecasting_guidance-1016.pdf
 
 ![AQI_equation](https://raw.githubusercontent.com/jasonh9/dailyair/master/AQI_equation1.png)
