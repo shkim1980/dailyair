@@ -30,6 +30,15 @@ $ yaourt -S watchman
 
 ![Screenshot](https://raw.githubusercontent.com/jasonh9/dailyair/master/screenshot.gif)
 
+##### Notes to create 'un-safe gas' algo
+Link to air quality forecasting guidelines -> https://www3.epa.gov/airnow/aq_forecasting_guidance-1016.pdf
+
+![AQI_equation](https://raw.githubusercontent.com/jasonh9/dailyair/master/AQI_equation1.png)
+
+![AQI_equation](https://raw.githubusercontent.com/jasonh9/dailyair/master/AQI_equation_application.png)
+
+![AQI_equation](https://raw.githubusercontent.com/jasonh9/dailyair/master/AQI_breakpoints.png)
+
 #### Todo
 - [x] create the splash screen 2 second transition : completed 031718
 - [ ] print API to console for debugging
