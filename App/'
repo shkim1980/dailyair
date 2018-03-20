@@ -15,7 +15,7 @@ import {
 import api from './api/OpenAQ';
 //import Test from './test/Test';
 //import GetLocation from './modules/GetLocation';
-import GetLocation from './modules/GetLocation';
+import getLocation from './modules/GetLocation';
 
 import SplashScreen from 'react-native-splash-screen';
 
@@ -58,10 +58,12 @@ export default class App extends Component<Props>{
                 resultsCity: res.results[0].city,
             })
         });
+
     }
 
     render() {
         console.log("Results: ", this.state.results);
+        console.log(
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
@@ -70,7 +72,6 @@ export default class App extends Component<Props>{
                 <Text style={styles.instructions}>
                     Daily air quality reports in your area... { this.state.resultsCity }
                 </Text>
-                <GetLocation/>
             </View>
         );
     }
