@@ -10,12 +10,14 @@ import {
     StyleSheet,
     Text,
     View,
+    Button,
+    TouchableOpacity,
 } from 'react-native'
 
 import api from './api/OpenAQ';
 //import Test from './test/Test';
 //import GetLocation from './modules/GetLocation';
-import GetLocation from './modules/GetLocation';
+import  getLocation from './modules/GetLocation';
 
 import SplashScreen from 'react-native-splash-screen';
 
@@ -48,29 +50,68 @@ export default class App extends Component<Props>{
         this.state = {
             results: [],
             resultsCity: [],
+            latitude: null,
+            longitude: null,
+            sensorType: '',
+            pUnit: '',
+            pValue: '',
         }
     }
 
     componentWillMount(){
-        api.getResults().then((res) => {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                this.setState({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                    error: null,
+            });
+        },
+            (error) => this.setState({ error: error.message }),
+            { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+        );
+
+    }
+
+    queryData(){
+        api.getResults(query=`${this.state.latitude},+${this.state.longitude}`).then((res) => {
             this.setState({
                 results: res.results,
                 resultsCity: res.results[0].city,
+                sensorType: res.results[0].parameter,
+                pUnit: res.results[0].unit,
+                pValue: res.results[0].value,
             })
         });
     }
 
+
     render() {
         console.log("Results: ", this.state.results);
+        console.log(this.state.latitude);
+        console.log(this.state.longitude);
+
+        console.log(this.state.sensorType);
+        console.log(this.state.pValue);
+        console.log(this.state.pUnit);
+
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
                     DailyAir
                 </Text>
                 <Text style={styles.instructions}>
-                    Daily air quality reports in your area... { this.state.resultsCity }
+                    Closest Sensor Proximity : {"\n"+ this.state.resultsCity }
+                    {"\n Particulate: " +
+                        this.state.sensorType + " " +
+                        this.state.pValue + " " +
+                        this.state.pUnit
+                    }
                 </Text>
-                <GetLocation/>
+                <Button
+                    onPress = { (e) => {this.queryData();}}
+                    title = "Get My Air"
+                />
             </View>
         );
     }

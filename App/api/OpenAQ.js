@@ -1,6 +1,7 @@
 var OpenAQapi = {
-    getResults(){
-        var url = 'https://api.openaq.org/v1/cities?limit=5';
+    getResults(query = "CA"){
+        console.log(this.query);
+        var url = `https://api.openaq.org/v1/measurements?coordinates=${query}`;
         return fetch(url).then((res) => res.json());
     }
 };
