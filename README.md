@@ -42,6 +42,7 @@ Link to air quality forecasting guidelines -> https://www3.epa.gov/airnow/aq_for
 
 #### Todo
 - [x] create the splash screen 2 second transition : completed 031718
-- [x] print API to console for debugging
-- [ ] implement geolocation.getCurrentLocation to the API
+- [x] print API to console for debugging : completed 031918
+- [x] implement geolocation.getCurrentLocation to the API : completed 031918
 - [ ] create the initial air quality scale algorithm
+- [ ] homepage mock up
