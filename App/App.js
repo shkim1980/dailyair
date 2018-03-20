@@ -12,7 +12,7 @@ import {
     View,
 } from 'react-native'
 
-
+import api from './api/OpenAQ';
 import Test from './test/Test';
 import SplashScreen from 'react-native-splash-screen';
 
@@ -33,11 +33,27 @@ export default class App extends Component<Props>{
             var waitUntil = new Date().getTime() + seconds*999;
             while(new Date().getTime() < waitUntil) true;
         }
-        sleep(3) // sleep for 2 seconds
+        sleep(1) // sleep for 2 seconds
         SplashScreen.hide()
     }
 
+    constructor(props){
+        super(props);
+        this.state = {
+            results: []
+        }
+    }
+
+    componentWillMount(){
+        api.getResults().then((res) => {
+            this.setState({
+                results: res.results
+            })
+        });
+    }
+
     render() {
+        console.log("Results: ", this.state.results);
         return (
           <View style={styles.container}>
             <Test/>
