@@ -36,12 +36,12 @@ export default class App extends Component<Props>{
         //navigator.geolocation.getCurrentPosition(getLocation.success, getLocation.error, getLocation.options);
 
         // quick and dirty pesudo doing work while splash screen is displayed
-        function sleep(seconds){
-            var waitUntil = new Date().getTime() + seconds*999;
-            while(new Date().getTime() < waitUntil) true;
-        }
+        //function sleep(seconds){
+        //    var waitUntil = new Date().getTime() + seconds*999;
+        //    while(new Date().getTime() < waitUntil) true;
+        //}
 
-        sleep(1) // sleep for 2 seconds
+        //sleep(1) // sleep for 2 seconds
         SplashScreen.hide()
     }
 
@@ -55,6 +55,7 @@ export default class App extends Component<Props>{
             sensorType: '',
             pUnit: '',
             pValue: '',
+            error: null,
         }
     }
 
@@ -74,20 +75,24 @@ export default class App extends Component<Props>{
     }
 
     queryData(){
-        api.getResults(query=`${this.state.latitude},+${this.state.longitude}`).then((res) => {
-            this.setState({
-                results: res.results,
-                resultsCity: res.results[0].city,
-                sensorType: res.results[0].parameter,
-                pUnit: res.results[0].unit,
-                pValue: res.results[0].value,
-            })
-        });
+        api.getResults(query=`${this.state.latitude},+${this.state.longitude}`)
+            .then((res) => {
+                this.setState({
+                    results: res.results,
+                    resultsCity: res.results[0].city,
+                    sensorType: res.results[0].parameter,
+                    pUnit: res.results[0].unit,
+                    pValue: res.results[0].value,
+                })
+            }).catch((error)=>{
+                console.log("error with this setting" + error.message);
+            });
     }
 
 
     render() {
         console.log("Results: ", this.state.results);
+        console.log("errors: ", this.state.error);
         console.log(this.state.latitude);
         console.log(this.state.longitude);
 
@@ -102,7 +107,7 @@ export default class App extends Component<Props>{
                 </Text>
                 <Text style={styles.instructions}>
                     Closest Sensor Proximity : {"\n"+ this.state.resultsCity }
-                    {"\n Particulate: " +
+                    {"\n Particulate In the Area: " +
                         this.state.sensorType + " " +
                         this.state.pValue + " " +
                         this.state.pUnit

@@ -25,6 +25,9 @@ $ yaourt -S watchman
 > While the AVD is running hold 'CTRL + M' and enable live reload, if there are modified files the application
 > will auto reload
 
+This application uses react-native-svg to render its graphs, this lib needs to be installed and linked into
+the project.
+
 ###### API to use
 > https://docs.openaq.org/#api-_
 
