@@ -47,5 +47,7 @@ Link to air quality forecasting guidelines -> https://www3.epa.gov/airnow/aq_for
 - [x] create the splash screen 2 second transition : completed 031718
 - [x] print API to console for debugging : completed 031918
 - [x] implement geolocation.getCurrentLocation to the API : completed 031918
+- [x] create a component to get the user time in UTC format : completed 041218
+- [ ] format 8 hour average current time function
 - [ ] create the initial air quality scale algorithm
 - [ ] homepage mock up
