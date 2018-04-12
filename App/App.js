@@ -15,10 +15,6 @@ import {
 } from 'react-native'
 
 import api from './api/OpenAQ';
-//import Test from './test/Test';
-//import GetLocation from './modules/GetLocation';
-import  getLocation from './modules/GetLocation';
-
 import SplashScreen from 'react-native-splash-screen';
 
 const instructions = Platform.select({
@@ -72,6 +68,7 @@ export default class App extends Component<Props>{
             { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
         );
 
+
     }
 
     queryData(){
@@ -88,6 +85,7 @@ export default class App extends Component<Props>{
                 console.log("error with this setting" + error.message);
             });
     }
+
 
 
     render() {
