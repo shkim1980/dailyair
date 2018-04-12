@@ -1,8 +1,11 @@
 // The equation goes as following to get the EPA AQI
 
-/** 
- *
- *
+/* Developer Notes
+ * ---------------
+ *  query 
+*/
+
+/*
 -------------------------------------------------------------
  O(sub(3)[ppm] per 8 hour  //OZONE 8HR
 -------------------------------------------------------------
@@ -58,4 +61,29 @@
  low = 355  high = 424  -> Very Unhealthy                       [ AQI 201 - 300 ]
  low = 425  high = 504  -> Hazardous                            [ AQI 301 - 400 ]
  low = 505  high = 604  -> Hazardous                            [ AQI 401 - 500 ]
--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------
+
+--------------------------------------------------------------
+ SO(sub(2))[ppb] per 1 hour //Sulfur Dioxide
+-------------------------------------------------------------
+ low = 0    high = 35   -> good                                 [ AQI 0   - 50  ]
+ low = 36   high = 75   -> moderate                             [ AQI 51  - 100 ]
+ low = 76   high = 185  -> Unhealthy for Sensitive Groups       [ AQI 101 - 150 ]
+ low = 186  high = 304  -> Unhealthy                            [ AQI 151 - 200 ]
+ low = 305  high = 604  -> Very Unhealthy                       [ AQI 201 - 300 ]
+ low = 605  high = 804  -> Hazardous                            [ AQI 301 - 400 ]
+ low = 805  high = 1004 -> Hazardous                            [ AQI 401 - 500 ]
+--------------------------------------------------------------
+
+--------------------------------------------------------------
+ NO(sub(2))[ppb] per 1 hour //Nitrogen Dioxide
+-------------------------------------------------------------
+ low = 0    high = 35   -> good                                 [ AQI 0   - 50  ]
+ low = 36   high = 75   -> moderate                             [ AQI 51  - 100 ]
+ low = 76   high = 185  -> Unhealthy for Sensitive Groups       [ AQI 101 - 150 ]
+ low = 186  high = 304  -> Unhealthy                            [ AQI 151 - 200 ]
+ low = 305  high = 604  -> Very Unhealthy                       [ AQI 201 - 300 ]
+ low = 605  high = 804  -> Hazardous                            [ AQI 301 - 400 ]
+ low = 805  high = 1004 -> Hazardous                            [ AQI 401 - 500 ]
+--------------------------------------------------------------
+*/
